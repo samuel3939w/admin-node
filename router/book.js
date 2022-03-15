@@ -9,9 +9,10 @@ const bookService = require('../services/book')
 
 const router = express.Router()
 
+//const upload=multer({ dest: `${UPLOAD_PATH}/book` })
+
 router.post(
-    '/upload',
-    multer({ dest: `${UPLOAD_PATH}/book` }).single('file'),
+    '/upload', multer({ dest: `${UPLOAD_PATH}/book` }).single('file'),
     (req, res, next) => {
         if (!req.file || req.file.length === 0) {
             new Result('上傳電子書失敗').fail(res)
@@ -121,7 +122,7 @@ router.get('/list', (req, res, next) => {
 })
 
 router.get('/delete', (req, res, next) => {
-    const {fileName}=req.query
+    const { fileName } = req.query
     bookService.deleteBook(fileName).then(() => {
         new Result('刪除圖書信息成功').success(res)
     }).catch(err => {

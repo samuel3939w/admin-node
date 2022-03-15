@@ -1,5 +1,5 @@
-const UPLOAD_PATH='D:/samuelchen/upload/admin-upload-ebook'
-const UPLOAD_URL='http://localhost:8089/admin-upload-ebook'
+const UPLOAD_PATH='C:/Users/samuelchen/Desktop/resource'
+const UPLOAD_URL='http://localhost:8081/'
 
 module.exports = {
     CODE_ERROR: -1,
